@@ -1,14 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
 
 if [ -z "$1" ]; then
   echo "Error: missing first parameter."
   exit 1
 fi
 
-docker build --no-cache -t dsnumbers/docker-qbittorrentvpn .
+podman build --no-cache -t dsnumbers/docker-qbittorrentvpn .
 
-docker image tag dsnumbers/docker-qbittorrentvpn:latest dsnumbers/docker-qbittorrentvpn:$1
+podman image tag dsnumbers/docker-qbittorrentvpn:latest dsnumbers/docker-qbittorrentvpn:$1
 
-docker push dsnumbers/docker-qbittorrentvpn:$1
+podman push dsnumbers/docker-qbittorrentvpn:$1
 
-docker push dsnumbers/docker-qbittorrentvpn:latest
+podman push dsnumbers/docker-qbittorrentvpn:latest
