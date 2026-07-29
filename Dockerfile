@@ -19,7 +19,7 @@ RUN dnf install -y \
     zip \
     ifconfig \
     ts \
-    redhat-lsb \
+    lsb_release \
     iproute \
     iputils \
     && dnf clean all
